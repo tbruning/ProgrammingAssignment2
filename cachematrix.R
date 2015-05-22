@@ -5,7 +5,8 @@
 ## Write a short comment describing this function
 ## Set and get the value of matrix
 ## set and get the value of inverse of the matrix
-
+## Additional comments
+## This function takes a 'inersable' matrix and creates the inverse.  
 makeCacheMatrix <- function(x = matrix()) {
     inver <- NULL
     set <- function(y) {
@@ -24,6 +25,8 @@ makeCacheMatrix <- function(x = matrix()) {
 # the inverse has already been computed. If yes, it gets the result from cache and skips the
 # computation. If not, it computes the inverse, sets the value in the cache 
 
+## Additional comments
+## This function creates the inversed matrix.  It displays the matrix and lets you know if it is from a new compute, or was it retrieved from cache.
 
 cacheSolve <- function(x, ...) {
     inver <- x$getinverse()
@@ -39,23 +42,3 @@ cacheSolve <- function(x, ...) {
     inver
 }
 
-## Example run
-x <-  rbind(c(5,10),c(10,5))
-m <- makeCacheMatrix(x)
-m$get()
-##      [,1] [,2]
-## [1,]   10   20
-## [2,]   20   10
-## First time without cache
-cacheSolve(m)
-##             [,1]        [,2]
-## [1,] -0.03333333  0.06666667
-## [2,]  0.06666667 -0.03333333
-## second time execution with cache
-## > cacheSolve(m)
-## This data is from cache.
-##             [,1]        [,2]
-## [1,] -0.03333333  0.06666667
-## [2,]  0.06666667 -0.03333333
-##
-## 
